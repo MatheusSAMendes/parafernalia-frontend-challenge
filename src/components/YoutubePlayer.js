@@ -1,7 +1,6 @@
 import React from 'react';
 
 const YoutubePlayer = ({ videoId }) => {
-
   const url = `https://www.youtube.com/embed/${videoId}`;
 
   return (
