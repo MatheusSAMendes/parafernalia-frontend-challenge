@@ -1,10 +1,11 @@
 import React from 'react';
 
-import VideosListItem from './VideosListItem';
+import { Content } from './index.styled';
+import VideosListItem from '../VideosListItem/index';
 
 const VideosList = ({ videos, handleVideoClick }) => {
   return (
-    <>
+    <Content>
       {videos.map(video => (
         <VideosListItem
           key={video.id.videoId}
@@ -12,7 +13,7 @@ const VideosList = ({ videos, handleVideoClick }) => {
           handleVideoClick={handleVideoClick}
         />
       ))}
-    </>
+    </Content>
   );
 }
 
