@@ -1,11 +1,11 @@
 import React from 'react';
 
-export const YoutubePlayer = ({ videoId }) => {
-
+const YoutubePlayer = ({ videoId }) => {
   const url = `https://www.youtube.com/embed/${videoId}`;
 
   return (
     <iframe
+      title="youtube"
       width="560" 
       height="315" 
       src={url} 
@@ -15,3 +15,5 @@ export const YoutubePlayer = ({ videoId }) => {
     </iframe>
   );
 }
+
+export default YoutubePlayer;
