@@ -9,17 +9,26 @@ import { Container, Side } from './index.styled';
 const App = () => {
   const [query, setQuery] = useState('');
   const [videoId, setVideoId] = useState(null);
-  const [data, setData] = useState(null);
+  const [videos, setVideos] = useState([]);
   const [errorMessage, setErrorMessage] = useState(null);
+  const [loading, setLoading] = useState(false);
 
   const handleQueryChange = (event) => setQuery(event.target.value);
 
   const handleSearchSubmit = async () => {
     try {
-      const response = await searchYoutubeVideos(query, 20);
-      setData(response.data);
+      if (query) {
+        setLoading(true);
+        setVideoId(null);
+        const response = await searchYoutubeVideos(query, 20);
+        setVideos(response.data.items);
+        setLoading(false);
+      } else {
+        setVideos([]);
+      }
     } catch (error) {
       setErrorMessage(error?.response?.data?.error?.message || 'Error.');
+      setLoading(false);
     }
   }
 
@@ -29,11 +38,12 @@ const App = () => {
     <Container>
       <Side>
         <SearchInput query={query} onQueryChange={handleQueryChange} onSearchSubmit={handleSearchSubmit} />
-        {errorMessage && (<p>{errorMessage}</p>)}
-        {data && data.items && (<VideosList videos={data.items} onVideoClick={handleVideoClick} />)}
+        {loading && <p>Procurando no YouTube...</p>}
+        {errorMessage && !loading && (<p>{errorMessage}</p>)}
+        {videos && !!videos.length && !loading && (<VideosList videos={videos} onVideoClick={handleVideoClick} />)}
       </Side>
       <Side>
-        {videoId && (<YoutubePlayer videoId={videoId} />)}
+        {videoId && !loading && (<YoutubePlayer videoId={videoId} />)}
       </Side>
     </Container>
   );
