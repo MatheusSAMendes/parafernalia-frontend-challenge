@@ -151,14 +151,18 @@ const response = {
 };
 
 const App = () => {
+  const [query, setQuery] = useState('');
   const [videoId, setVideoId] = useState('');
+
+  const handleQueryChange = (event) => setQuery(event.target.value);
+  const handleSearchSubmit = () => console.log(query);
   const handleVideoClick = (video) => setVideoId(video.id.videoId);
 
   return (
     <Container>
       <Side>
-        <SearchInput />
-        <VideosList videos={response.items} handleVideoClick={handleVideoClick} />
+        <SearchInput query={query} onQueryChange={handleQueryChange} onSearchSubmit={handleSearchSubmit} />
+        <VideosList videos={response.items} onVideoClick={handleVideoClick} />
       </Side>
       <Side>
         {videoId && (<YoutubePlayer videoId={videoId} />)}
