@@ -3,13 +3,16 @@ import React, { useState } from 'react';
 import VideosList from '../../components/VideosList';
 import SearchInput from '../../components/SearchInput';
 import YoutubePlayer from '../../components/YoutubePlayer';
+import ErrorMessage from '../../components/ErrorMessage';
+import Loading from '../../components/Loading';
+import NotFoundMessage from '../../components/NotFoundMessage'
 import { searchYoutubeVideos } from '../../services/youtube'
 import { Container, Side } from './index.styled';
 
 const App = () => {
   const [query, setQuery] = useState('');
   const [videoId, setVideoId] = useState(null);
-  const [videos, setVideos] = useState([]);
+  const [videos, setVideos] = useState(null);
   const [errorMessage, setErrorMessage] = useState(null);
   const [loading, setLoading] = useState(false);
 
@@ -37,10 +40,12 @@ const App = () => {
   return (
     <Container>
       <Side>
+        <h1>Search videos on youtube</h1>
         <SearchInput query={query} onQueryChange={handleQueryChange} onSearchSubmit={handleSearchSubmit} />
-        {loading && <p>Procurando no YouTube...</p>}
-        {errorMessage && !loading && (<p>{errorMessage}</p>)}
-        {videos && !!videos.length && !loading && (<VideosList videos={videos} onVideoClick={handleVideoClick} />)}
+        {loading && <Loading />}
+        {errorMessage && !loading && <ErrorMessage message={errorMessage} />}
+        {videos && !!videos.length && !loading && <VideosList videos={videos} onVideoClick={handleVideoClick} />}
+        {videos && !videos.length && !loading && <NotFoundMessage />}
       </Side>
       <Side>
         {videoId && !loading && (<YoutubePlayer videoId={videoId} />)}
