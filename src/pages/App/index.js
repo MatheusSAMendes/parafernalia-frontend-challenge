@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { Container, Side } from './index.styled';
 import YoutubePlayer from '../../components/YoutubePlayer/index';
 import VideosList from '../../components/VideosList/index';
+import SearchInput from '../../components/SearchInput/index';
 
 const response = {
   "kind": "youtube#searchListResponse",
@@ -150,13 +151,13 @@ const response = {
 };
 
 const App = () => {
-  const [videoId, setVideoId] = useState(null);
-
+  const [videoId, setVideoId] = useState('');
   const handleVideoClick = (video) => setVideoId(video.id.videoId);
 
   return (
     <Container>
       <Side>
+        <SearchInput />
         <VideosList videos={response.items} handleVideoClick={handleVideoClick} />
       </Side>
       <Side>
