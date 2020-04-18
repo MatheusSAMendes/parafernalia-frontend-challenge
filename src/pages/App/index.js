@@ -16,7 +16,7 @@ const App = () => {
 
   const handleSearchSubmit = async () => {
     try {
-      const response = await searchYoutubeVideos(query);
+      const response = await searchYoutubeVideos(query, 20);
       setData(response.data);
     } catch (error) {
       setErrorMessage(error?.response?.data?.error?.message || 'Error.');
