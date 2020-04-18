@@ -5,7 +5,7 @@ import { SearchField } from './index.styled';
 const SearchInput = ({ query, onSearchSubmit, onQueryChange }) => {
   const handleSearchSubmit = (event) => {
     event.preventDefault();
-    onSearchSubmit()
+    onSearchSubmit();
   }
 
   return (
