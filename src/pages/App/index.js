@@ -5,7 +5,8 @@ import SearchInput from '../../components/SearchInput';
 import YoutubePlayer from '../../components/YoutubePlayer';
 import ErrorMessage from '../../components/ErrorMessage';
 import Loading from '../../components/Loading';
-import NotFoundMessage from '../../components/NotFoundMessage'
+import NotFoundMessage from '../../components/NotFoundMessage';
+import Title from '../../components/Title';
 import { searchYoutubeVideos } from '../../services/youtube'
 import { Container, Side } from './index.styled';
 
@@ -40,7 +41,7 @@ const App = () => {
   return (
     <Container>
       <Side>
-        <h1>Search videos on youtube</h1>
+        <Title />
         <SearchInput query={query} onQueryChange={handleQueryChange} onSearchSubmit={handleSearchSubmit} />
         {loading && <Loading />}
         {errorMessage && !loading && <ErrorMessage message={errorMessage} />}
