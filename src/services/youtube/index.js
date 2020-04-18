@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const youtubeApi = axios.create({
-  baseURL: 'htnnntps://www.googleapis.com/youtube/v3/',
+  baseURL: 'https://www.googleapis.com/youtube/v3/',
   timeout: 3000,
 });
 
@@ -9,7 +9,10 @@ export const searchYoutubeVideos = async (query, limit) => await youtubeApi.get(
   params: {
     part: 'id,snippet',
     q: query,
+    type: 'video',
     maxresults: limit,
-    key: 'AIzaSyB2qPOWZw7J7GJ5rRjpL_tkfi4shZckQaE'
+    key: 'AIzaSyDBJOgVuWWUKnFxOIamWhwJ9enkpg8t13s'
   }
 });
+
+//key: 'AIzaSyB2qPOWZw7J7GJ5rRjpL_tkfi4shZckQaE'
