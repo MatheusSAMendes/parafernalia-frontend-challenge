@@ -7,7 +7,7 @@ const VideosListItem = ({ video, onVideoClick }) => {
 
   return (
     <VideoItem onClick={handleVideoClick}>
-      <VideoThumbnail src={video.snippet.thumbnails.default.url} alt="thumb" />
+      <VideoThumbnail src={video.snippet.thumbnails.medium.url} alt="thumb" />
       <VideoInformations>
         <VideoTitle>{video.snippet.title}</VideoTitle>
         <VideoDescription>{video.snippet.description}</VideoDescription>
