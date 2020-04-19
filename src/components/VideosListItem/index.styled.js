@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const VideoItem = styled.div`
   display: flex;
   height: 120px;
-  margin: 15px;
+  margin: 10px;
   max-width: 600px;
   background-color: #1d1d1d;
   border-radius: 10px;

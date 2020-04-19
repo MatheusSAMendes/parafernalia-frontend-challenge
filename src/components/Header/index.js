@@ -1,9 +1,12 @@
 import React from 'react';
 
-import { TopBar } from './index.styled';
+import { TopBar, Title } from './index.styled';
 
 const Header = ({ children }) => (
-  <TopBar>{children}</TopBar>
+  <TopBar>
+    <Title>YouTube Player</Title>
+    {children}
+    </TopBar>
 );
 
 export default Header;
