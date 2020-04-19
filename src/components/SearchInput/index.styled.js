@@ -7,4 +7,5 @@ export const SearchField = styled.input`
   border: 2px solid #f9f9f9;
   background-color: #f9f9f9;
   border-radius: 3px;
+  width: 350px;
 `;

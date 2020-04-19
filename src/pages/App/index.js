@@ -9,7 +9,7 @@ import Loading from '../../components/Loading';
 import NotFoundMessage from '../../components/NotFoundMessage';
 import GlobalFonts from '../../assets/fonts/fonts';
 import { searchYoutubeVideos } from '../../services/youtube'
-import { Content, Container, LeftSide, RightSide } from './index.styled';
+import { GlobalStyle, Content, Container, LeftSide, RightSide } from './index.styled';
 
 const App = () => {
   const [query, setQuery] = useState('');
@@ -42,6 +42,7 @@ const App = () => {
   return (
     <Content>
       <GlobalFonts />
+      <GlobalStyle />
       <Header>
         <SearchInput query={query} onQueryChange={handleQueryChange} onSearchSubmit={handleSearchSubmit} />
       </Header>

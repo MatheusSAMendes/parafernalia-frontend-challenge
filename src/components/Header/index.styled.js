@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const TopBar = styled.div`
   width: 100%;
-  height: 5vh;
+  height: 50px;
   background-color: #af0000;
   margin-bottom: 10px;
   padding: 5px;
