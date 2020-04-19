@@ -1,13 +1,15 @@
 import styled from 'styled-components';
 
+
 export const Content = styled.div`
-  display: block;
-  height: 100vh;
-  background-color: #121212;
-  font-family: 'Roboto', sans-serif;
-  font-display: block;
-  color: #f9f9f9;
+display: block;
+height: 100vh;
+background-color: #121212;
+font-family: 'ProximaNovaSemibold';
+font-display: block;
+color: #f9f9f9;
 `;
+
 export const Container = styled.div`
   display: flex;
   height: 80vh;

@@ -7,6 +7,7 @@ import YoutubePlayer from '../../components/YoutubePlayer';
 import ErrorMessage from '../../components/ErrorMessage';
 import Loading from '../../components/Loading';
 import NotFoundMessage from '../../components/NotFoundMessage';
+import GlobalFonts from '../../assets/fonts/fonts';
 import { searchYoutubeVideos } from '../../services/youtube'
 import { Content, Container, LeftSide, RightSide } from './index.styled';
 
@@ -40,6 +41,7 @@ const App = () => {
 
   return (
     <Content>
+      <GlobalFonts />
       <Header>
         <SearchInput query={query} onQueryChange={handleQueryChange} onSearchSubmit={handleSearchSubmit} />
       </Header>
