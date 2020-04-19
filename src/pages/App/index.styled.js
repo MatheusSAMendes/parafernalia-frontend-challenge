@@ -15,7 +15,6 @@ export const Container = styled.div`
 
 export const LeftSide = styled.div`
   display: flex;
-  //flex: 1;
   width: 50%;
 `;
 
@@ -23,6 +22,5 @@ export const RightSide = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  //flex: 1;
   width: 50%;
 `;

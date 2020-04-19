@@ -1,5 +1,7 @@
 import React from 'react';
 
-const Loading = () => <p>Loading...</p>;
+import { LoadingText } from './index.styled';
+
+const Loading = () => <LoadingText>Loading...</LoadingText>;
 
 export default Loading;
