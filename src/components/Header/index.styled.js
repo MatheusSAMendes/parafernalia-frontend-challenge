@@ -10,3 +10,7 @@ export const TopBar = styled.div`
   align-items: center;
   flex: 1;
  `;
+
+ export const Title = styled.h1`
+  margin-left: 20px;
+ `;

@@ -5,7 +5,7 @@ export const Content = styled.div`
 display: block;
 height: 100vh;
 background-color: #121212;
-font-family: 'ProximaNovaSemibold';
+font-family: 'ProximaNovaBold';
 font-display: block;
 color: #f9f9f9;
 `;
