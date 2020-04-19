@@ -4,6 +4,6 @@ export const Content = styled.div`
 
 `;
 
-export const SectionTitle = styled.h2`
-margin-left: 100px;
+export const SectionTitle = styled.h1`
+margin-left: 10px;
 `; 

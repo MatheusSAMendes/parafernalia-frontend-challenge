@@ -11,7 +11,9 @@ const SearchInput = ({ query, onSearchSubmit, onQueryChange }) => {
   return (
     <form onSubmit={handleSearchSubmit}>
       <SearchField type="search" id="search" name="search" value={query} onChange={onQueryChange} />
-      <input type="submit" value="Search" />
+      <button type="submit" class="btn btn-primary">
+        <img src="" alt=""/>
+      </button>
     </form>
   );
 }
