@@ -14,5 +14,3 @@ export const searchYoutubeVideos = async (query, limit) => await youtubeApi.get(
     key: 'AIzaSyDBJOgVuWWUKnFxOIamWhwJ9enkpg8t13s'
   }
 });
-
-//key: 'AIzaSyB2qPOWZw7J7GJ5rRjpL_tkfi4shZckQaE'
