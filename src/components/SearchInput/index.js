@@ -11,7 +11,7 @@ const SearchInput = ({ query, onSearchSubmit, onQueryChange }) => {
   return (
     <form onSubmit={handleSearchSubmit}>
       <SearchField type="search" id="search" name="search" placeholder="Search videos on YouTube" value={query} onChange={onQueryChange} />
-      <SearchButton type="submit" class="btn btn-primary">Search</SearchButton>
+      <SearchButton type="submit" >Search</SearchButton>
     </form>
   );
 }

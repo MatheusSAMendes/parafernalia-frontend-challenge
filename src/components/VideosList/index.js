@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { Content, SectionTitle } from './index.styled';
-import VideosListItem from '../VideosListItem/index';
+import VideosListItem from '../VideosListItem';
 
 const VideosList = ({ videos, onVideoClick }) => {
   return (
