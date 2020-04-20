@@ -11,7 +11,7 @@ export const VideoItem = styled.div`
   justify-content: space-between;
 `;
 
-export const VideoTitle = styled.h4`
+export const VideoTitle = styled.a`
   margin-bottom: 15px;
   margin-top: auto;
   width: 250px;
@@ -20,9 +20,10 @@ export const VideoTitle = styled.h4`
   overflow: hidden;
   text-overflow: ellipsis;
   direction: ltr;
+  color: #f9f9f9;
 `;
 
-export const VideoDescription = styled.p`
+export const VideoDescription = styled.a`
   color: #3F3F3F;
   font-size: small;
   font-strecth: condensed;
